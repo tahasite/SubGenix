@@ -115,10 +115,6 @@ Contributions are welcome! To contribute:
 
 Please ensure your code follows the project's coding style and includes appropriate tests.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - [OpenAI Whisper](https://github.com/openai/whisper) for speech-to-text transcription.
@@ -126,9 +122,12 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [librosa](https://librosa.org/) for audio duration analysis.
 - [deep-translator](https://github.com/nidhaloff/deep-translator) for subtitle translation.
 
-## Contact
+## 📞 Support & Contact
 
-For questions or support, open an issue on GitHub or contact the maintainer at `<your-email>` (replace with your email or remove if not applicable).
+If you have any questions or issues, feel free to contact us via Telegram:  
+📩 [@AdminTahaSite](https://t.me/AdminTahaSite)
+
+<img src="https://s6.uupload.ir/files/image_2025-03-12_01-27-52_3a5r.png" alt="QR Code for @AdminTahaSite" width="150" height="150">
 
 ---
 
