@@ -122,6 +122,12 @@ Please ensure your code follows the project's coding style and includes appropri
 - [librosa](https://librosa.org/) for audio duration analysis.
 - [deep-translator](https://github.com/nidhaloff/deep-translator) for subtitle translation.
 
+## 📜 Additional Resources
+
+- **[Persian README (README-FA.md)](README-FA.md)** - توضیحات کامل به زبان فارسی  
+
+---
+
 ## 📞 Support & Contact
 
 If you have any questions or issues, feel free to contact us via Telegram:  
