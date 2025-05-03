@@ -25,7 +25,7 @@ SubGenix یک برنامه وب قدرتمند برای تولید و ترجمه
 
 1. **دریافت پروژه**:
    ```bash
-   git clone https://github.com/<your-username>/SubGenix.git
+   git clone https://github.com/tahasite/SubGenix.git
    cd SubGenix
    ```
 
