@@ -1,5 +1,5 @@
 # SubGenix
-
+<img src="https://s6.uupload.ir/files/1_7i9t.png" alt="image script" width="150" height="150">
 SubGenix is a powerful web application for generating and translating subtitles from audio or video files. Built with Flask, Whisper, and SocketIO, it provides a user-friendly interface to transcribe audio into subtitles and translate them into multiple languages. SubGenix supports real-time progress tracking for both model downloading and subtitle generation, making it an efficient tool for content creators, translators, and developers.
 
 ## 📜 Additional Resources
