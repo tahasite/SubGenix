@@ -25,7 +25,7 @@ Follow these steps to set up SubGenix on your local machine:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/<your-username>/SubGenix.git
+   git clone https://github.com/tahasite/SubGenix.git
    cd SubGenix
    ```
 
