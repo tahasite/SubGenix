@@ -1,31 +1,33 @@
 # SubGenix
-<img src="https://s6.uupload.ir/files/1_7i9t.png" alt="image script" width="400" height="400" style="border-radius:15px;">
-SubGenix is a powerful web application for generating and translating subtitles from audio or video files. Built with Flask, Whisper, and SocketIO, it provides a user-friendly interface to transcribe audio into subtitles and translate them into multiple languages. SubGenix supports real-time progress tracking for both model downloading and subtitle generation, making it an efficient tool for content creators, translators, and developers.
+
+<img src="https://s6.uupload.ir/files/1_7i9t.png" alt="SubGenix Logo" width="400" height="400" style="border-radius:15px;">
+
+SubGenix is a powerful web application for generating and translating subtitles from audio or video files. Built with Flask, Whisper, and SocketIO, it provides a user-friendly interface to transcribe audio into subtitles and translate them into multiple languages. SubGenix supports real-time progress tracking for model downloading and subtitle generation, making it an efficient tool for content creators, translators, and developers.
 
 ## 📜 Additional Resources
 
-- **[Persian README (README-FA.md)](README-FA.md)** - توضیحات کامل به زبان فارسی  
+- **[Persian README (README-FA.md)](README-FA.md)** - Comprehensive guide in Persian
 
 ## Features
 
 - **Subtitle Generation**: Transcribe audio/video files into subtitles using OpenAI's Whisper models (`tiny`, `small`, `medium`).
-- **Translation**: Translate generated subtitles into various languages using Google Translate.
-- **Real-Time Progress**: Track model download and subtitle generation progress with dynamic progress bars.
-- **Multilingual Interface**: Supports English and Persian (Farsi) with RTL/LTR layout switching.
+- **Translation**: Translate subtitles into various languages using Google Translate.
+- **Real-Time Progress**: Monitor model download and subtitle generation with dynamic progress bars in the web interface and detailed logs in the console (e.g., CMD or PowerShell).
+- **Multilingual Interface**: Supports English and Persian with automatic RTL/LTR layout switching.
 - **Preview & Download**: Preview subtitles in the browser and download them as `.srt` files.
-- **Error Handling**: Robust error reporting for file processing, model loading, and translation issues.
+- **Error Handling**: Displays detailed error messages in both the web interface (alerts) and console (logs) for issues like file processing, model loading, or translation failures.
 
 ## Prerequisites
 
-To run SubGenix, you need to have the following installed:
+To run SubGenix, ensure the following are installed:
 
-- **Python**: Version 3.8 or higher. Download and install from [python.org](https://www.python.org/downloads/).
-- A modern web browser (e.g., Chrome, Firefox, Edge) for accessing the web interface.
-- Internet connection (for downloading Whisper models and translation services).
+- **Python**: Version 3.8 or higher. Download from [python.org](https://www.python.org/downloads/).
+- A modern web browser (e.g., Chrome, Firefox, Edge) for the web interface.
+- Internet connection for downloading Whisper models and translation services.
 
 ## Installation
 
-Follow these steps to set up SubGenix on your local machine:
+Follow these steps to set up SubGenix locally:
 
 1. **Clone the Repository**:
    ```bash
@@ -33,14 +35,8 @@ Follow these steps to set up SubGenix on your local machine:
    cd SubGenix
    ```
 
-2. **Set Up a Virtual Environment** (recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install Dependencies**:
-   Ensure you have `pip` installed, then run:
+2. **Install Dependencies**:
+   Ensure `pip` is installed, then run the following commands to install the required libraries:
    ```bash
    pip install Flask
    pip install flask-socketio
@@ -50,26 +46,14 @@ Follow these steps to set up SubGenix on your local machine:
    pip install python-socketio
    pip install python-engineio
    pip install git+https://github.com/openai/whisper.git@main
-```
-   ```bash
-   pip install -r requirements.txt
    ```
-   The `requirements.txt` file includes:
-   - Flask==2.3.3
-   - flask-socketio==5.3.6
-   - openai-whisper==20231117
-   - librosa==0.10.2
-   - deep-translator==1.11.4
-   - werkzeug==3.0.1
-   - regex==2023.12.25
-   - eventlet==0.36.1
 
-4. **Verify Python Installation**:
-   Confirm that Python is installed and accessible:
+3. **Verify Python Installation**:
+   Check that Python is installed and accessible:
    ```bash
    python --version
    ```
-   If this command fails, ensure Python is installed and added to your system's PATH.
+   If this fails, ensure Python is installed and added to your system's PATH.
 
 ## Usage
 
@@ -78,10 +62,10 @@ Follow these steps to set up SubGenix on your local machine:
    ```bash
    python app.py
    ```
-   The server will run on `http://localhost:5000` by default.
+   The server runs on `http://localhost:5000` by default. Console logs (e.g., in CMD or PowerShell) will show server startup and runtime messages (e.g., `INFO:__main__:Server started on port 5000`).
 
 2. **Access the Web Interface**:
-   Open your web browser and navigate to `http://localhost:5000`.
+   Open a browser and navigate to `http://localhost:5000`.
 
 3. **Generate Subtitles**:
    - Select the **Generate** tab.
@@ -89,34 +73,35 @@ Follow these steps to set up SubGenix on your local machine:
    - Choose a Whisper model (`tiny`, `small`, or `medium`).
    - Select the source language or use "Auto Detect".
    - Click **Generate Subtitles**.
-   - Monitor the progress bar for model download (if needed) and subtitle generation.
-   - Once complete, download the `.srt` file or preview the subtitles.
+   - Track progress via the web interface's progress bar and console logs (e.g., `INFO:__main__:Processing segment 1/50`).
+   - Download the `.srt` file or preview subtitles once complete.
 
 4. **Translate Subtitles**:
    - Switch to the **Translate** tab.
-   - Select the generated `.srt` file (automatically populated after generation).
+   - Select the generated `.srt` file (auto-populated after generation).
    - Choose the target language.
    - Click **Translate Subtitles**.
+   - Monitor translation progress in the web interface and console logs (e.g., `INFO:__main__:Translating to Spanish (50% complete)`).
    - Download or preview the translated `.srt` file.
 
 ## Progress Tracking
 
-- **Model Download**: If a Whisper model is not cached, SubGenix displays a progress bar showing download progress (e.g., "Downloading model... (tiny, 72.1MB of 75MB)").
-- **Subtitle Generation**: Progress is calculated based on the timestamp of each subtitle segment relative to the total duration of the audio/video file (e.g., a segment ending at 41.36 seconds in a 23-minute video shows ~3% progress).
+- **Model Download**: If a Whisper model is not cached, a progress bar in the web interface shows download status (e.g., "Downloading model... (tiny, 72.1MB of 75MB)"). Console logs provide detailed progress (e.g., `INFO:__main__:Downloading tiny model (50%)`).
+- **Subtitle Generation**: Progress is shown as a percentage in the web interface, calculated based on subtitle segment timestamps relative to the file's total duration. Console logs detail each segment (e.g., `INFO:__main__:Processed segment at 41.36s (3% complete)`).
 
 ## Troubleshooting
 
 - **Python Not Found**:
-  Ensure Python is installed and added to your PATH. Run `python --version` to verify.
+   Ensure Python is installed and added to your PATH. Run `python --version` to verify.
 - **Module Not Found**:
-  Re-run `pip install -r requirements.txt` in the virtual environment.
+   Re-run the `pip install` commands listed above.
 - **Progress Bar Stalls**:
-  Check the terminal for error logs (e.g., `ERROR:__main__:...`). Common issues include:
-  - Invalid audio/video file: Ensure the file is a supported format.
-  - Internet issues: Verify your connection for model downloads or translations.
-  - Model corruption: Delete the model file (e.g., `~/.cache/whisper/tiny.pt`) and try again.
+   Check console logs for errors (e.g., `ERROR:__main__:Invalid audio file`). Common issues:
+   - Invalid audio/video file: Ensure the file is in a supported format.
+   - Internet issues: Verify your connection for model downloads or translations.
+   - Model corruption: Delete the model file (e.g., `~/.cache/whisper/tiny.pt`) and try again.
 - **WebSocket Errors**:
-  If the browser console shows `WebSocket disconnected`, ensure no firewall is blocking port 5000.
+   If the browser console shows `WebSocket disconnected`, ensure no firewall is blocking port 5000. Check console logs for details (e.g., `ERROR:__main__:WebSocket connection failed`).
 
 ## Contributing
 
@@ -137,13 +122,20 @@ Please ensure your code follows the project's coding style and includes appropri
 - [librosa](https://librosa.org/) for audio duration analysis.
 - [deep-translator](https://github.com/nidhaloff/deep-translator) for subtitle translation.
 
-
 ## 📞 Support & Contact
 
-If you have any questions or issues, feel free to contact us via Telegram:  
+For questions or issues, contact us via Telegram:  
 📩 [@AdminTahaSite](https://t.me/AdminTahaSite)
 
 <img src="https://s6.uupload.ir/files/image_2025-03-12_01-27-52_3a5r.png" alt="QR Code for @AdminTahaSite" width="150" height="150">
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Project Status
+
+SubGenix is actively maintained. Check the [Issues](https://github.com/tahasite/SubGenix/issues) section for planned features and bug reports.
 
 ---
 
