@@ -52,6 +52,7 @@ Follow these steps to set up SubGenix on your local machine:
    - deep-translator==1.11.4
    - werkzeug==3.0.1
    - regex==2023.12.25
+   - eventlet==0.36.1
 
 4. **Verify Python Installation**:
    Confirm that Python is installed and accessible:
