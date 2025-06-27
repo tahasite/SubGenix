@@ -1,8 +1,7 @@
-Flask==2.3.3
-flask-socketio==5.3.6
-openai-whisper==20231117
-librosa==0.10.2
-deep-translator==1.11.4
-werkzeug==3.0.1
-regex==2023.12.25
-eventlet==0.36.1
+Flask
+flask-socketio
+git+https://github.com/openai/whisper.git@main
+openai-whisper
+librosa
+deep-translator
+werkzeug
