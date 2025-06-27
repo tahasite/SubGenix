@@ -42,6 +42,16 @@ Follow these steps to set up SubGenix on your local machine:
 3. **Install Dependencies**:
    Ensure you have `pip` installed, then run:
    ```bash
+   pip install Flask
+   pip install flask-socketio
+   pip install librosa
+   pip install deep-translator
+   pip install werkzeug
+   pip install python-socketio
+   pip install python-engineio
+   pip install git+https://github.com/openai/whisper.git@main
+```
+   ```bash
    pip install -r requirements.txt
    ```
    The `requirements.txt` file includes:
